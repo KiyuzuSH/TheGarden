@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Pause : MonoBehaviour
+{
+    private Button button;
+    public GameObject pause;
+    // Start is called before the first frame update
+    void Start()
+    {
+        button = GetComponent<Button>();
+        button.onClick.AddListener(OnClick);
+    }
+
+    void OnClick()
+    {
+        pause.SetActive(true);
+        PauseGame();
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0.0f;
+    }
+
+}
