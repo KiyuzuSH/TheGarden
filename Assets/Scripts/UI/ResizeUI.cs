@@ -30,6 +30,7 @@ public class ResizeUI : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     }
     public void OnDrag(PointerEventData eventData)
     {
+        Time.timeScale = 0.0f;
         Debug.Log("¼ÌÐø");
 
         //       transform.position = new Vector3(Input.mousePosition.x, this.transform.position.y, this.transform.position.z);
@@ -51,6 +52,7 @@ public class ResizeUI : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        Time.timeScale = 1.0f;
         Debug.Log("½áÊø");
     }
 

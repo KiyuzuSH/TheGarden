@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class CheckCocktail : MonoBehaviour
 {
     public GameObject cocktailinfo;
+    public Image missionpage;
+    private RectTransform rect;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +18,18 @@ public class CheckCocktail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        rect = missionpage.GetComponent<RectTransform>();
     }
 
     void OnMouseEnter()
     {
         if(Time.timeScale==1.0f)
         {
+        if(rect.rect.width<=582)
+            {
         cocktailinfo.SetActive(true);
+            }
+
         }
 
     }
