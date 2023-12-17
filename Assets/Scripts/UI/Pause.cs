@@ -7,17 +7,26 @@ public class Pause : MonoBehaviour
 {
     private Button button;
     public GameObject pause;
+    public float x;
+    public GameObject rect1;
     // Start is called before the first frame update
     void Start()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
     }
-
+    void Update()
+    {
+        x = rect1.transform.position.x;
+    }
     void OnClick()
     {
-        pause.SetActive(true);
+        if (x >= 1150)
+        {
+pause.SetActive(true);
         PauseGame();
+        }
+            
     }
     public void PauseGame()
     {
