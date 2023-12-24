@@ -10,6 +10,7 @@ public class ML : MonoBehaviour
     public float size;
     public Text Word;
     public float text;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class ML : MonoBehaviour
         Debug.Log("Æô¶¯");
         GameObject totalsize = GameObject.Find("¶ÅËÉ×Ó¾Æ(Clone)");
         List<Transform> lst = new List<Transform>();
+
         if(totalsize!=null)
         {
         foreach(Transform child in totalsize.transform)
@@ -54,5 +56,12 @@ public class ML : MonoBehaviour
             }
 
         }
+
+    }
+    public void OnDestroy()
+    {
+        size = 0;
+        text = 0;
+        Word.text = "0%";
     }
 }

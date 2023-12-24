@@ -21,11 +21,11 @@ public class Pause : MonoBehaviour
     }
     void OnClick()
     {
-        if (x >= 1150)
-        {
+    //    if (x >= 1150)
+    //    {
 pause.SetActive(true);
         PauseGame();
-        }
+    //    }
             
     }
     public void PauseGame()

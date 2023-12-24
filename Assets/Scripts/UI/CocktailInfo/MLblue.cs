@@ -54,4 +54,12 @@ public class MLblue : MonoBehaviour
 
         }
     }
+    public void OnDestroy()
+    {
+        size = 0;
+        text = 0;
+        Word.text = "0%";
+        Debug.Log("111");
+    }
+
 }
