@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace Game
 {
     [System.Serializable]
-    public class SaveData
+    public class GameData
     {
-
+    
     }
 }
