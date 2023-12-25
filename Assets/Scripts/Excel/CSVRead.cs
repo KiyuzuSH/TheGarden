@@ -51,7 +51,7 @@ namespace Game
         void Start()
         {
             myDrinkList = new List<Drink>();
-            //     filename = Application.dataPath + "/Excel/" + "/¾ÆÁÐ±í.csv";
+            //     filename = Application.dataPath + "/Excel/" + "/ï¿½ï¿½ï¿½Ð±ï¿½.csv";
             //           ReadCSV();
 
         }
@@ -59,7 +59,7 @@ namespace Game
         // Update is called once per frame
         void Update()
         {
-            size = GameObject.Find("totalsize").GetComponent<totalsize>().total;
+            // size = GameObject.Find("totalsize").GetComponent<totalsize>().total;
         }
 
         //  void ReadCSV()
@@ -103,16 +103,16 @@ namespace Game
                 else
                 {
 
-                    Text name1 = GameObject.Find("¾ÆÃû-³¡Íâ").GetComponent<CocktailName>().Word;
-                    string names = name1.text;
+                    // Text name1 = GameObject.Find("ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½").GetComponent<CocktailName>().Word;
+                    // string names = name1.text;
                     float weight1 = size;
                     Drink newDrink = new Drink();
-                    newDrink.name = names;
+                    // newDrink.name = names;
                     newDrink.weight = weight1;
-                    newDrink.num1 = GameObject.Find("º¬Á¿Êý¾Ý-ºì").GetComponent<ML>().text;
-                    newDrink.num2 = GameObject.Find("º¬Á¿Êý¾Ý-À¶").GetComponent<MLblue>().text;
-                    newDrink.num3 = GameObject.Find("º¬Á¿Êý¾Ý-ÂÌ").GetComponent<ML3>().text;
-                    newDrink.num4 = GameObject.Find("º¬Á¿Êý¾Ý-Ë®").GetComponent<ML4>().text;
+                    // newDrink.num1 = GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½").GetComponent<ML>().text;
+                    // newDrink.num2 = GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½").GetComponent<MLblue>().text;
+                    // newDrink.num3 = GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½").GetComponent<ML3>().text;
+                    // newDrink.num4 = GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-Ë®").GetComponent<ML4>().text;
                     newDrink.num5 = 0;
                     newDrink.num6 = 0;
                     newDrink.num7 = 0;
@@ -122,14 +122,14 @@ namespace Game
                     myDrinkList.Add(newDrink);
                     //      TextWriter tw = new StreamWriter(filename, true);
 
-                    // tw.WriteLine(names + "," + weight1 + "," + GameObject.Find("º¬Á¿Êý¾Ý-ºì").GetComponent<ML>().text + ","
-                    //        + GameObject.Find("º¬Á¿Êý¾Ý-À¶").GetComponent<MLblue>().text + "," + GameObject.Find("º¬Á¿Êý¾Ý-ÂÌ").GetComponent<ML3>().text + ","
-                    //       + GameObject.Find("º¬Á¿Êý¾Ý-Ë®").GetComponent<ML4>().text + "," + 0 + "," + 0 + "," + 0 + "," + 0 + "," + 0 + "," + 0);
+                    // tw.WriteLine(names + "," + weight1 + "," + GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½").GetComponent<ML>().text + ","
+                    //        + GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½").GetComponent<MLblue>().text + "," + GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½").GetComponent<ML3>().text + ","
+                    //       + GameObject.Find("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-Ë®").GetComponent<ML4>().text + "," + 0 + "," + 0 + "," + 0 + "," + 0 + "," + 0 + "," + 0);
 
                     //    tw.Close();
 
                     //newRowData = {number1,name1,weight1,num11,num12,num13,num14,num15,num16,num17,num18,num19,num101};
-                    Debug.Log("±£´æÍê±Ï");
+                    Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                    // DestroyObjects();
                     //SceneManager.LoadScene("SampleScene_wine");
                 }
@@ -143,16 +143,16 @@ namespace Game
         public void DeleteCocktail()
         {
             myDrinkList.Clear();
-            Debug.Log("É¾³ýÍê±Ï");
+            Debug.Log("É¾ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
 
         void DestroyObjects()
         {
-            GameObject[] cocktails = GameObject.FindGameObjectsWithTag(tagToDestroy); // »ñÈ¡ÌØ¶¨±êÇ©µÄËùÓÐ¶ÔÏó
+            GameObject[] cocktails = GameObject.FindGameObjectsWithTag(tagToDestroy); // ï¿½ï¿½È¡ï¿½Ø¶ï¿½ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½
 
             foreach (GameObject cocktail in cocktails)
             {
-                Destroy(cocktail); // Ïú»Ù¶ÔÏó
+                Destroy(cocktail); // ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½
             }
         }
 
