@@ -1,36 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pause : MonoBehaviour
+namespace Game
 {
-    private Button button;
-    public GameObject pause;
-    public float x;
-    public GameObject rect1;
-    // Start is called before the first frame update
-    void Start()
+    public class Pause : MonoBehaviour
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
-    }
-    void Update()
-    {
-        x = rect1.transform.position.x;
-    }
-    void OnClick()
-    {
-    //    if (x >= 1150)
-    //    {
-pause.SetActive(true);
-        PauseGame();
-    //    }
-            
-    }
-    public void PauseGame()
-    {
-        Time.timeScale = 0.0f;
-    }
+        public static GameObject PanelPauseInstance;
 
+        private void Start()
+        {
+            GetComponent<Button>().onClick.AddListener(PauseGame);
+            PanelPauseInstance = null;
+        }
+
+        private void PauseGame()
+        {
+            // TODO: if the mission list is not at forward
+            if (PanelPauseInstance == null)
+            {
+                Time.timeScale = 0.0f;
+                PanelPauseInstance = Utilities.SpawnUIPanel(Panel.Pause);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            GetComponent<Button>().onClick.RemoveAllListeners();
+        }
+    }
 }
