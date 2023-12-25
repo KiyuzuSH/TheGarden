@@ -56,7 +56,7 @@ namespace Game
             }
         }
 
-        public static void SaveData(SaveData data)
+        public static void SaveData(GameData data)
         {
             string fileName=Consts.DataPath;
 
@@ -69,14 +69,14 @@ namespace Game
             stream.Close();
         }
         
-        public static SaveData LoadData()
+        public static GameData LoadData()
         {
-            SaveData data=new SaveData();
+            GameData data=new GameData();
             Stream stream = new FileStream(Consts.DataPath,FileMode.Open,FileAccess.Read);
             // 忽略标记 = true
             StreamReader sr = new StreamReader(stream, true);
             XmlSerializer xmlSerializer = new XmlSerializer(data.GetType());
-            data = xmlSerializer.Deserialize(sr) as SaveData;
+            data = xmlSerializer.Deserialize(sr) as GameData;
             stream.Close();
             sr.Close();
             return data;

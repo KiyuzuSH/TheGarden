@@ -12,7 +12,6 @@ namespace Game
 
         private void ContinueGame()
         {
-            // TODO: disable pause panel
             if (Pause.PanelPauseInstance != null)
             {
                 Destroy(Pause.PanelPauseInstance);
