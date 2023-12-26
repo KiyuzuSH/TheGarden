@@ -3,21 +3,21 @@ using UnityEngine.UI;
 
 namespace Game
 {
-    public class Continue : MonoBehaviour
+    public class CocktailListReturn : MonoBehaviour
     {
         private void Start()
         {
-            GetComponent<Button>().onClick.AddListener(ContinueGame);
+            GetComponent<Button>().onClick.AddListener(CloseListUI);
         }
 
-        private void ContinueGame()
+        private void CloseListUI()
         {
             if (transform.parent.gameObject.activeSelf)
             {
                 transform.parent.gameObject.SetActive(false);
-                Time.timeScale = 1.0f;
             }
         }
+
         private void OnDestroy()
         {
             GetComponent<Button>().onClick.RemoveAllListeners();
