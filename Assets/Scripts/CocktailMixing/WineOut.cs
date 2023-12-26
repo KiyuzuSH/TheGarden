@@ -25,7 +25,7 @@ namespace Game
         {
             if (checker.TotalSize >= 960f)
             {
-                if (Mathf.Approximately(Time.timeScale, 1.0f) && fullWarningPanel.activeSelf == false)
+                if (Mathf.Approximately(Time.timeScale, 1.0f) && !fullWarningPanel.activeSelf)
                 {
                     fullWarningPanel.SetActive(true);
                     Invoke(nameof(DisableFullWarning), 2);

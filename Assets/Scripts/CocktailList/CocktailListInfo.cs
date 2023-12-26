@@ -1,26 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using Game;
+
+namespace Game
+{
     public class CocktailListInfo : MonoBehaviour
     {
         public TMP_Text cocktaillist;
         public CSVRead cocktailinfo;
-    public List<CSVRead.Drink> drinks;
-        // Start is called before the first frame update
+        public List<CSVRead.Drink> drinks;
         
         public void Update()
         {
-            
-               drinks = GameObject.Find("Excel").GetComponent<CSVRead>().myDrinkList;
+            drinks = GameObject.Find("Excel").GetComponent<CSVRead>().myDrinkList;
             
             cocktaillist.text = "";
-            for(int i=0;i<drinks.Count;i++)
-           {
-               cocktaillist.text += "ÒûÁÏÃû³Æ£º"+drinks[i].name + "\n";
-               cocktaillist.text += "º¬Á¿"+drinks[i].weight + "ml"+"\n";
+            foreach (var t in drinks)
+            {
+                cocktaillist.text += "é¥®æ–™åç§°ï¼š"+t.name + "\n";
+                cocktaillist.text += "å«é‡"+t.weight + "ml"+"\n";
             }
         }
     }
+}
