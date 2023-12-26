@@ -10,7 +10,7 @@ namespace Game
         public CSVRead cocktailinfo;
         public List<CSVRead.Drink> drinks;
         
-        public void Update()
+        private void Update()
         {
             drinks = GameObject.Find("Excel").GetComponent<CSVRead>().myDrinkList;
             
