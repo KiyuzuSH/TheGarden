@@ -17,8 +17,11 @@ namespace Game
         public float WaterPer { get; private set; }
         public float TotalSize { get; private set; }
         public string CocktailName { get; private set; }
-        
+        [Tooltip("The Mission Panel"
+                 +"\n"+"任务面板")]
         public RectTransform missionPanel;
+        [Tooltip("The Cocktail Info Panel, shows when mouse on that"
+                 +"\n" +"鸡尾酒信息面板，鼠标Hover时显示。")]
         public GameObject cocktailPanel;
 
         private void Start()
@@ -30,7 +33,7 @@ namespace Game
         private void OnMouseEnter()
         {
             if (Mathf.Approximately(Time.timeScale, 1.0f) && !cocktailPanel.activeSelf)
-                if (missionPanel.localPosition.x >= 1425f)
+                if (missionPanel.localPosition.x >= 1424f)
                     cocktailPanel.SetActive(true);
         }
 

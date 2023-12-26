@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CheckCocktail
-  - songzi
+  - Canvas
+  - BlackCherry
+  - AlcoholLiquid
+  - Gin
+  - RedWine
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -13,21 +17,21 @@ TagManager:
   - 
   - Water
   - UI
-  - Fluids
-  - RedWine
-  - Songzi
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - AlcoholLiquid
+  - Gin
   - BlackCherry
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - RedWine
+  - Water
   - 
   - 
   - 

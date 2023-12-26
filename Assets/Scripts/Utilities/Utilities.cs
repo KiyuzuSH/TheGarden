@@ -40,22 +40,6 @@ namespace Game
             }
         }
 
-        public static GameObject SpawnUIPanel(Panel type)
-        {
-            GameObject prefab = Resources.Load<GameObject>("Prefabs/Panels/Panel" + type.ToString());
-            if (null == prefab)
-            {
-                Debug.LogWarning("The Panel "+type.ToString()+" does not exist.");
-                return null;
-            }
-            else
-            {
-                GameObject panel = Instantiate(prefab,Canvas,false);
-                panel.name = "Panel" + type.ToString(); // To delete "(Clone)"
-                return panel;
-            }
-        }
-
         public static void SaveData(GameData data)
         {
             string fileName=Consts.DataPath;
