@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Game
 {
-    [System.Serializable]
+    [Serializable]
     public class GameData
     {
         // TODO: Set GAMEDATA structure
