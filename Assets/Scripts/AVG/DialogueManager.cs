@@ -32,14 +32,6 @@ namespace Game
         [Tooltip("继续按钮\nThe Button to Continue the dialogue")]
         public Button buttonNext;
 
-        /// 预制体
-        [Tooltip("选择按钮的预制体\nThe Prefab of Choice Button")]
-        public GameObject buttonChoice;
-
-        /// Grid Layout Group Transform
-        [Tooltip("按钮的Grid Layout Group\nThe Grid Layout Group of Buttons")]
-        public Transform gridButton;
-
         private void Awake()
         {
             imageDic["警员"] = sprites[0];
@@ -83,7 +75,10 @@ namespace Game
                             GenerateChoice(i);
                             break;
                         case "!":
-                            
+                            dialogText.text = "";
+                            nameText.text = "";
+                            ShowTitle(cells[5]);
+                            dialogIndex = int.Parse(cells[2]);
                             break;
                         case "END":
                             Debug.Log("Story Script Ends Here");
@@ -110,7 +105,7 @@ namespace Game
         private void UpdateText(string _name, string _text)
         {
             nameText.text = _name;
-            dialogText.text = _text;
+            dialogText.text = _text.Replace("\\n", "\n");
         }
 
         private void UpdateImage(string _name, string _pos)
@@ -123,6 +118,14 @@ namespace Game
         #endregion
 
         #region ChoiceButton
+        
+        /// 预制体
+        [Tooltip("选择按钮的预制体\nThe Prefab of Choice Button")]
+        public GameObject buttonChoice;
+
+        /// Grid Layout Group Transform
+        [Tooltip("按钮的Grid Layout Group\nThe Grid Layout Group of Buttons")]
+        public Transform gridButton;
 
         private void GenerateChoice(int _index)
         {
@@ -148,6 +151,27 @@ namespace Game
 
         #endregion
 
+        #region SideTitle
+        
+        /// 旁边的小标题
+        [Tooltip("小标题栏\nSide Title GameObject")]
+        public GameObject sideTitle;
+
+        private void ShowTitle(string _text)
+        {
+            string[] content = _text.Split('|');
+            sideTitle.transform.GetChild(3).GetComponent<TMP_Text>().text = content[0];
+            sideTitle.transform.GetChild(4).GetComponent<TMP_Text>().text = content[1];
+            if (!sideTitle.activeSelf) sideTitle.SetActive(true);
+            Invoke(nameof(Inactive), 3);
+        }
+
+        private void Inactive()
+        {
+            sideTitle.SetActive(false);
+        }
+
+        #endregion
 
     }
 }
